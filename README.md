@@ -15,6 +15,8 @@ node (substituir pelo nome do arquivo)
 
 # Comandos TypeScript
 
-Para compilar arquivo TS deve usar o comando tsc (substituir pelo nome do arquivo)
+Para compilar arquivo TS e converte-lo para JS ou ES5 deve usar o comando
+
+ tsc (substituir pelo nome do arquivo)
 
 
