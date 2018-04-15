@@ -19,4 +19,8 @@ Para compilar arquivo TS e converte-lo para JS ou ES5 deve usar o comando
 
  tsc (substituir pelo nome do arquivo)
 
+ Para adicionar arquivo tsconfig.json deve executar 
+
+ tsc -init
+
 
