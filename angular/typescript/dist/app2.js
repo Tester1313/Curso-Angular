@@ -1,11 +1,9 @@
 "use strict";
 var Carro = /** @class */ (function () {
-    function Carro(modelo, numeroDePortas, velocidade) {
-        this.numeroDePortas = 0;
+    function Carro(modelo, numeroDePortas) {
         this.velocidade = 0;
         this.modelo = modelo;
         this.numeroDePortas = numeroDePortas;
-        this.velocidade = velocidade;
     }
     Carro.prototype.acelerar = function () {
         this.velocidade = this.velocidade + 10;
@@ -19,8 +17,9 @@ var Carro = /** @class */ (function () {
     return Carro;
 }());
 var Concessionaria = /** @class */ (function () {
-    function Concessionaria(endereco) {
+    function Concessionaria(endereco, listaDeCarros) {
         this.endereco = endereco;
+        this.listaDeCarros = listaDeCarros;
     }
     Concessionaria.prototype.fornecerEndereco = function () {
         return this.endereco;
@@ -30,5 +29,31 @@ var Concessionaria = /** @class */ (function () {
     };
     return Concessionaria;
 }());
-var concessionaria = new Concessionaria('Avenida Paulista');
-console.log(concessionaria);
+var Pessoa = /** @class */ (function () {
+    function Pessoa(nome, carroPreferido) {
+        this.nome = nome;
+        this.carroPreferido = carroPreferido;
+    }
+    Pessoa.prototype.dizerNome = function () {
+        return this.nome;
+    };
+    Pessoa.prototype.dizerCarroPreferido = function () {
+        return this.carroPreferido;
+    };
+    Pessoa.prototype.comprarCarro = function (carro) {
+        this.carro = carro;
+    };
+    Pessoa.prototype.dizerCarroQueTem = function () {
+        return this.carro;
+    };
+    return Pessoa;
+}());
+// criar carros
+var carroA = new Carro('dodge journey', 4);
+var carroB = new Carro('veloster', 3);
+var carroC = new Carro('cerato', 2);
+// montar lista de carros concessionaria
+var listaDeCarros = [carroA, carroB, carroC];
+var concessionaria = new Concessionaria('Av Paulista', listaDeCarros);
+// exibir lista de carros
+console.log(concessionaria.mostrarListaDeCarros());
