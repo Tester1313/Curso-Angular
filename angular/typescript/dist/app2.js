@@ -18,7 +18,17 @@ var Carro = /** @class */ (function () {
     };
     return Carro;
 }());
-var carroA = new Carro('Fusca', 1, 1);
-console.log(carroA);
-carroA.acelerar();
-console.log(carroA);
+var Concessionaria = /** @class */ (function () {
+    function Concessionaria(endereco) {
+        this.endereco = endereco;
+    }
+    Concessionaria.prototype.fornecerEndereco = function () {
+        return this.endereco;
+    };
+    Concessionaria.prototype.mostrarListaDeCarros = function () {
+        return this.listaDeCarros;
+    };
+    return Concessionaria;
+}());
+var concessionaria = new Concessionaria('Avenida Paulista');
+console.log(concessionaria);
