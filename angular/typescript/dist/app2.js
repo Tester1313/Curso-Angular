@@ -56,4 +56,14 @@ var carroC = new Carro('cerato', 2);
 var listaDeCarros = [carroA, carroB, carroC];
 var concessionaria = new Concessionaria('Av Paulista', listaDeCarros);
 // exibir lista de carros
-console.log(concessionaria.mostrarListaDeCarros());
+//console.log(concessionaria.mostrarListaDeCarros());
+// Comprar o carro
+var cliente = new Pessoa('Thiago', 'veloster');
+// Funcao map realiza loop em cada uma das posições do array
+concessionaria.mostrarListaDeCarros().map(function (carro) {
+    if (carro['modelo'] == cliente.dizerCarroPreferido()) {
+        //compra o carro
+        cliente.comprarCarro(carro);
+    }
+});
+console.log(cliente.dizerCarroQueTem());
