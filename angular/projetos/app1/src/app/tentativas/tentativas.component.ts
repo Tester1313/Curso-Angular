@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TentativasComponent implements OnInit {
 
+  coracaoVazio: string = '/assets/coracao_vazio.png';
+  coracaoCheio: string = '/assets/coracao_cheio.png';
+
   constructor() { }
 
   ngOnInit() {
