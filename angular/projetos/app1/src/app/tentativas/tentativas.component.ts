@@ -13,7 +13,7 @@ export class TentativasComponent implements OnInit {
   coracaoCheio: string = '/assets/coracao_cheio.png';
 
   public coracoes: Coracao[] = [
-    new Coracao(true),new Coracao(true),new Coracao(true)
+    new Coracao(false),new Coracao(true),new Coracao(true)
   ]
 
   constructor() { 
