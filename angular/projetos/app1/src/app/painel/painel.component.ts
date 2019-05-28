@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { Frase } from '../shared/frase.model'
 import { FRASES } from './frases-mock'
-import { TestBed } from '@angular/core/testing';
 
 @Component({
   selector: 'app-painel',
@@ -21,6 +20,8 @@ export class PainelComponent implements OnInit {
 
   public progresso: number = 0;
 
+  public tentativas: number = 3;
+
   constructor() { 
     this.atualizaRodada()
   }
@@ -32,6 +33,7 @@ export class PainelComponent implements OnInit {
   }
 
   public verificarResposta(): void {
+    console.log(this.tentativas)
     if(this.resposta == this.rodadaFrase.frasePtBr) {
       alert('A traducao esta correta')
       this.rodada++;
@@ -40,7 +42,12 @@ export class PainelComponent implements OnInit {
       this.atualizaRodada();
       
     } else {
-      alert('A traducao esta correta')
+      //alert('A traducao esta correta')
+      this.tentativas--
+
+      if(this.tentativas <= -1) {
+        alert('Você perdeu todas as tentativas.')
+      }
     }
   }
 
