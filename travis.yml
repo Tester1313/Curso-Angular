@@ -14,7 +14,7 @@ before_script:
   - npm install -g @angular/cli
   
 script:
-- ng build --prod --base-href https://tester1313.github.io/Curso-Angular/
+- ng build --prod --base-href https://tester1313.github.io/Curso-Angular/angular/projetos/app1/
 
 deploy:
   provider: pages
