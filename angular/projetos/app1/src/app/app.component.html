@@ -1,5 +1,6 @@
 
 
  <div class="app-topo"></div>
- <app-painel></app-painel>
+ <!-- realizar o databinding do metodo a ser executado com o evento disparado na classe filha-->
+ <app-painel (encerrarJogo)="encerrarJogo($event)"></app-painel>
 
